@@ -12,7 +12,7 @@
 </style>
 <!-- Home -->
 <div class="d-none d-md-block">
-    <li class="d-flex flex-column flex-xl-row sidebar-li px-3 gap-1 gap-xl-3 align-items-center mb-2">
+    <li class="d-flex flex-column flex-xl-row sidebar-li top-sidebar px-3 gap-1 gap-xl-3 align-items-center mb-2">
         <i class="bi bi-house-fill fs-5"></i>
         <p class="m-0 text-lg-sm px-2">
             Home
@@ -20,7 +20,7 @@
     </li>
 
     <!-- Shorts -->
-    <li class="d-flex flex-column flex-xl-row sidebar-li px-3 gap-1 gap-xl-3 align-items-center mb-2">
+    <li class="d-flex flex-column flex-xl-row sidebar-li top-sidebar px-3 gap-1 gap-xl-3 align-items-center mb-2">
         <i class="bi bi-lightning-charge fs-5"></i>
         <p class="m-0 text-lg-sm px-2">
             Shorts
@@ -28,7 +28,7 @@
     </li>
 
     <!-- Subscriptions -->
-    <li class="d-flex flex-column flex-xl-row sidebar-li px-3 gap-1 gap-xl-3 align-items-center mb-3">
+    <li class="d-flex flex-column flex-xl-row sidebar-li top-sidebar px-3 gap-1 gap-xl-3 align-items-center mb-3">
         <i class="bi bi-collection-play fs-5"></i>
         <p class="m-0 text-lg-sm px-2">
             Subscriptions
@@ -36,7 +36,7 @@
     </li>
 </div>
 
-<div class="d-none d-xl-block">
+<div class="d-none d-xl-block sidebar-bottom">
     <hr>
 
     <p class="fw-bold">You</p>
