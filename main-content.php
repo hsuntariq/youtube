@@ -50,8 +50,9 @@
     ?>
 
     <div class="col-xl-4 col-lg-6 col-md-6">
-        <div class="card overflow-hidden rounded-4 border-0 ">
-            <img class="rounded-4 thumbnail-image object-fit-cover" height="250px"
+        <a href="./single-page.php?id=<?php echo $item['id'] ?>&title=<?php echo $item['title'] ?>&video=<?php echo $item['video']?>&thumbnail=<?php echo $item['thumbnail'] ?>"
+            class="card text-decoration-none overflow-hidden rounded-4 border-0 ">
+            <img class="rounded-4  thumbnail-image object-fit-cover" height="250px"
                 src="./thumbnail/<?php echo $item['thumbnail'] ?>" width="100%" alt="">
             <video controls muted height="250px" class="object-fit-cover thumbnail-video rounded-4 d-none"
                 src="./videos/<?php echo $item['video'] ?>"></video>
@@ -72,7 +73,7 @@
                 </div>
                 <i class="bi bi-three-dots-vertical"></i>
             </div>
-        </div>
+        </a>
     </div>
 
     <?php 

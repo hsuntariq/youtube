@@ -6,8 +6,37 @@
     font-size: 0.7rem !important;
 }
 
+.text-sm{
+    font-size:0.8rem !important;
+}
+
 @media (min-width:1200px){
     .text-lg-sm{
         font-size: 1rem !important;
+    }
+
+    
+
+}
+
+@media (max-width:1200px){
+    .my-single-video{
+        height: 300px !important;
+    }
+
+}
+
+@media (max-width:572px){
+    .my-single-image img{
+        height:250px !important;
+    }
+
+    .my-single-image img:nth-of-type(1){
+        margin-top: 1rem !important;
+    }
+}
+@media (max-width:500px){
+    .my-single-video{
+        height:250px !important;
     }
 }
