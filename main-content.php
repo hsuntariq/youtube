@@ -44,13 +44,13 @@
 
     <?php 
         include './config.php';
-        $videos = "SELECT * FROM videos";
+        $videos = "SELECT videos.id AS video_id,videos.title,videos.video,videos.description,videos.thumbnail,videos.schedule,users.id AS user_id,users.name FROM videos JOIN users ON videos.user_id = users.id";
         $result = mysqli_query($connection,$videos);
         foreach($result as $item){
     ?>
 
     <div class="col-xl-4 col-lg-6 col-md-6">
-        <a href="./single-page.php?id=<?php echo $item['id'] ?>&title=<?php echo $item['title'] ?>&video=<?php echo $item['video']?>&thumbnail=<?php echo $item['thumbnail'] ?>"
+        <a href="./single-page.php?id=<?php echo $item['video_id'] ?>&title=<?php echo $item['title'] ?>&video=<?php echo $item['video']?>&thumbnail=<?php echo $item['thumbnail'] ?>"
             class="card text-decoration-none overflow-hidden rounded-4 border-0 ">
             <img class="rounded-4  thumbnail-image object-fit-cover" height="250px"
                 src="./thumbnail/<?php echo $item['thumbnail'] ?>" width="100%" alt="">
@@ -64,7 +64,9 @@
                         <h6 class="m-0" style="font-size:0.8rem">
                             <?php echo $item['title'] ?>
                         </h6>
-                        <p class="text-secondary m-0" style="font-size:0.8rem">Username</p>
+                        <p class="text-secondary m-0" style="font-size:0.8rem">
+                            <?php echo $item['name'] ?>
+                        </p>
                         <p class="text-secondary m-0 d-flex gap-2 align-items-center" style="font-size:0.8rem">
                             30K views <i class="bi bi-circle-fill" style="font-size:0.2rem"></i> 2 hours ago
                         </p>

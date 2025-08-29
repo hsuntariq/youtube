@@ -158,12 +158,8 @@
     <button class="theme-toggle"></button>
     <div class="container">
         <h2>Sign Up</h2>
-        <form id="signupForm" method="POST" action="./register-user.php">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-                <div class="error" id="usernameError">Username must be at least 3 characters long</div>
-            </div>
+        <form id="signupForm" method="POST" action="./log-user.php">
+
             <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" required>
@@ -174,15 +170,20 @@
                 <input type="password" id="password" name="password" required>
                 <div class="error" id="passwordError">Password must be at least 6 characters long</div>
             </div>
-            <div class="form-group">
-                <label for="confirmPassword">Confirm Password</label>
-                <input type="password" id="confirmPassword" name="confirmPassword" required>
-                <div class="error" id="confirmPasswordError">Passwords do not match</div>
-            </div>
-            <a href="./login.php" class="text-primary text-end d-block text-decoration-none">
-                <span class="text-secondary">Already have an account? </span> Login
+
+            <?php 
+                if(isset($_SESSION['invalid'])){
+                    echo "<p class='text-danger fw-semibold'>
+                        Invalid Credetials
+                    </p>";
+                }
+                unset($_SESSION['invalid']);
+            ?>
+
+            <a href="./sign-up.php" class="text-primary text-end d-block text-decoration-none">
+                <span class="text-secondary">New to the app? </span> Signup
             </a>
-            <button class="signup-btn" type="submit">Sign Up</button>
+            <button type="submit">Sign Up</button>
             <div class="success-message" id="successMessage">Sign-up successful!</div>
         </form>
     </div>
@@ -196,26 +197,51 @@
         const confirmPasswordInput = document.getElementById('confirmPassword');
         const successMessage = document.getElementById('successMessage');
         const themeToggle = document.querySelector('.theme-toggle');
-        const signup_btn = document.querySelector('.signup-btn')
+
         // Theme toggle functionality
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
         });
 
-        signup_btn.disabled = true
+        // Form validation
+        // form.addEventListener('submit', (e) => {
+        //     let isValid = true;
 
+        //     // Reset error messages
+        //     document.querySelectorAll('.error').forEach(error => error.style.display = 'none');
+        //     successMessage.style.display = 'none';
 
-        passwordInput.addEventListener('keyup', () => {
-            if (passwordInput.value.length > 6) {
-                signup_btn.disabled = false
+        //     // Username validation
+        //     if (usernameInput.value.length < 3) {
+        //         document.getElementById('usernameError').style.display = 'block';
+        //         isValid = false;
+        //     }
 
-            } else {
-                signup_btn.disabled = true
+        //     // Email validation
+        //     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        //     if (!emailPattern.test(emailInput.value)) {
+        //         document.getElementById('emailError').style.display = 'block';
+        //         isValid = false;
+        //     }
 
-            }
-        })
+        //     // Password validation
+        //     if (passwordInput.value.length < 6) {
+        //         document.getElementById('passwordError').style.display = 'block';
+        //         isValid = false;
+        //     }
 
+        //     // Confirm password validation
+        //     if (passwordInput.value !== confirmPasswordInput.value) {
+        //         document.getElementById('confirmPasswordError').style.display = 'block';
+        //         isValid = false;
+        //     }
 
+        //     // If valid, show success message
+        //     if (isValid) {
+        //         successMessage.style.display = 'block';
+        //         form.reset();
+        //     }
+        // });
     });
     </script>
 </body>

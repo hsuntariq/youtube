@@ -56,18 +56,23 @@
 
             <?php 
                 if(isset($_SESSION['ticket'])){
-                    echo "<h6>Welcome {$_SESSION['ticket']} </h6>";
-                }
-            ?>
-
-            <a href="/create-video.php" class="text-decoration-none">
+                    echo "
+                    <h6>Welcome {$_SESSION['ticket']} </h6>
+                        <a href='/create-video.php' class='text-decoration-none'>
 
                 <button
-                    class="btn btn-outline-dark create-video d-flex align-items-center fw-semibold rounded-pill position-relative">
-                    <i class="bi bi-plus fs-5"></i>
+                    class='btn btn-outline-dark create-video d-flex align-items-center fw-semibold rounded-pill position-relative'>
+                    <i class='bi bi-plus fs-5'></i>
                     <span>Create</span>
                 </button>
             </a>
+                    ";
+                }
+            ?>
+
+
+
+
             <div class="d-none  create-video-option position-absolute bg-white shadow rounded-2 px-2"
                 style="top: 90%;width: 150px;">
                 <ul class="list-unstyled create-btn">
